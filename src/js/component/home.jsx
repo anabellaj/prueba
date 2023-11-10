@@ -1,26 +1,21 @@
-import React from "react";
+  import React from 'react';
+  import TodoContainer from './index';
+  import { useTodoList } from './request';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+  function Home() {
+    const { tasks, addTask, deleteTask, cleanAllTasks, getTodoList } = useTodoList();
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+    return (
+      <div>
+        <TodoContainer
+          tasks={tasks}
+          addTask={addTask}
+          deleteTask={deleteTask}
+          cleanAllTasks={cleanAllTasks}
+          getTodoList={getTodoList}
+        />
+      </div>
+    );
+  }
 
-export default Home;
+  export default Home;
