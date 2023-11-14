@@ -6,7 +6,7 @@
     const { tasks, addTask, deleteTask, cleanAllTasks, getTodoList } = useTodoList();
 
     return (
-      <div>
+      <div className="container-fluid text-center bg-gradient p-3" style={{height: '100vh'}}>
         <TodoContainer
           tasks={tasks}
           addTask={addTask}
